@@ -270,44 +270,8 @@ def load_statewide_domain_data():
 # ============================================================================
 
 def check_password():
-    if 'authenticated' not in st.session_state:
-        st.session_state.authenticated = False
-    if st.session_state.authenticated:
-        return True
-
-    st.markdown(f"""
-    <div style="text-align: center; padding: 60px 20px;">
-        <h1 style="color: {WI_RED}; font-size: 3rem; margin-bottom: 10px;">VERA-WI</h1>
-        <p style="color: #666; font-size: 1.1rem; margin-bottom: 5px;">
-            Verification Engine for Results &amp; Accountability<br>Wisconsin Implementation
-        </p>
-        <p style="color: {WI_RED}; font-size: 0.95rem; font-weight: bold; margin-top: 10px;">
-            The WIDA Headquarters State
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        password = st.text_input("Enter access code:", type="password", key="pw")
-        if st.button("Access VERA-WI", use_container_width=True):
-            if password == APP_PASSWORD:
-                st.session_state.authenticated = True
-                st.rerun()
-            else:
-                st.error("Invalid access code")
-
-    st.markdown(f"""
-    <div style="text-align: center; margin-top: 60px; color: #999; font-size: 0.85rem;">
-        <p>VERA-WI analyzes ACCESS for ELLs domain data and Forward Exam results across ~421 Wisconsin districts.</p>
-        <p>~55,000 English Learners | WIDA Headquarters at UW-Madison</p>
-        <p><strong>Largest Black-white 4th grade NAEP gap in the nation</strong></p>
-        <p>Forward Exam: 61.1% white ELA vs 18.1% Black (43-pt gap!) | 14.5% Black math (49-pt gap!)</p>
-        <p>Spanish 61%, Hmong second | Act 20 (2023) Science of Reading</p>
-        <p style="margin-top: 10px;">Contact: brian@h-edu.solutions</p>
-    </div>
-    """, unsafe_allow_html=True)
-    return False
+    st.session_state.authenticated = True
+    return True
 
 
 # ============================================================================
