@@ -19,7 +19,7 @@ import plotly.graph_objects as go
 # CONFIGURATION
 # ============================================================================
 
-APP_WI_RED = "#C5050C"
+WI_RED = "#C5050C"
 WI_DARK = "#2D2D2D"
 WI_CHARCOAL = "#3E3E3E"
 WI_WHITE = "#FFFFFF"
